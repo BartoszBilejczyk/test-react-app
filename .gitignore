@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/REACT_VS_VUE_CODING_CHALLENGE.md
+/react-vs-vue-guide.html
+/typescript-guide.html
+# Node modules
+node_modules/
+.idea/
