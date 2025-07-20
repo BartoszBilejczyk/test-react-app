@@ -24,7 +24,7 @@ VoiceCraft Dashboard is a comprehensive voice AI platform interface featuring:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd elevenlabs
+cd test-react-app
 
 # Install dependencies
 npm install

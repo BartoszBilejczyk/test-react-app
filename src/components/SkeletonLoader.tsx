@@ -153,22 +153,3 @@ export const SkeletonPageHeader = (): React.JSX.Element => (
     <SkeletonElement width="w-96" height="h-5" />
   </div>
 );
-
-// Full page skeleton (combines multiple elements)
-export const SkeletonPage = ({
-  showHeader = true,
-  showStats = false,
-  showGrid = true,
-  gridCount = 6,
-}: {
-  showHeader?: boolean;
-  showStats?: boolean;
-  showGrid?: boolean;
-  gridCount?: number;
-}): React.JSX.Element => (
-  <div className="p-6 space-y-8">
-    {showHeader && <SkeletonPageHeader />}
-    {showStats && <SkeletonStats />}
-    {showGrid && <SkeletonVoiceGrid count={gridCount} />}
-  </div>
-);

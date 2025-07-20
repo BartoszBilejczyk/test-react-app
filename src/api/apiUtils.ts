@@ -111,23 +111,6 @@ export const fetchProjectStats = async () => {
   });
 };
 
-export const createProject = async (projectData: any) => {
-  // Simulate longer delay for creation
-  await delay(2000);
-
-  const newProject = {
-    id: `project-${Date.now()}`,
-    ...projectData,
-    createdAt: new Date().toISOString().split('T')[0],
-    status: 'processing' as const,
-  };
-
-  return simulateApiCall(newProject, {
-    delay: 0, // Already delayed above
-    errorMessage: 'Failed to create project',
-  });
-};
-
 // Dashboard API
 export const fetchDashboardData = async () => {
   const { getDashboardStats, getRecentActivity, getRecentVoices } = await import('./mockDashboard');
@@ -175,17 +158,6 @@ export const generateSpeech = async (text: string, voiceId: string) => {
   });
 };
 
-// Audio playback simulation
-export const validateAudioUrl = async (url: string) => {
-  return simulateApiCall(
-    { isValid: true, url },
-    {
-      delay: 200,
-      errorMessage: 'Audio file is not accessible',
-    },
-  );
-};
-
 // Dubbing API simulation
 export const processDubbing = async (
   file: File,
@@ -226,20 +198,6 @@ export class ApiError extends Error {
   ) {
     super(message);
     this.name = 'ApiError';
-  }
-}
-
-export class NetworkError extends ApiError {
-  constructor(message: string = 'Network connection failed') {
-    super(message, 0, 'NETWORK_ERROR');
-    this.name = 'NetworkError';
-  }
-}
-
-export class ValidationError extends ApiError {
-  constructor(message: string = 'Invalid input data') {
-    super(message, 400, 'VALIDATION_ERROR');
-    this.name = 'ValidationError';
   }
 }
 

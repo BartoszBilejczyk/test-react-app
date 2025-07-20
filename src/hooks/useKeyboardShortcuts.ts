@@ -128,7 +128,7 @@ export const useKeyboardShortcuts = () => {
   };
 };
 
-// Focus management hook for accessibility
+// Focus management hook for accessibility - currently not used given the example nature of the app
 export const useFocusManagement = () => {
   // Vue equivalent: const focusElement = (selector) => { ... }
   const focusElement = useCallback((selector: string) => {

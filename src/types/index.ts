@@ -1,21 +1,3 @@
-// Comprehensive types for the VoiceCraft Dashboard React app
-
-// Audio types for Context API
-export interface AudioState {
-  currentTrack: string | null;
-  isPlaying: boolean;
-  currentTime: number;
-  duration: number;
-}
-
-export interface AudioContextType {
-  audioState: AudioState;
-  playTrack: (trackUrl: string, trackId: string) => void;
-  pauseTrack: () => void;
-  stopTrack: () => void;
-  setCurrentTime: (time: number) => void;
-}
-
 // Voice types
 export interface Voice {
   id: string;
@@ -77,12 +59,6 @@ export interface ApiResponse<T> {
   data: T;
   success: boolean;
   message?: string;
-}
-
-// Loading and Error types
-export interface LoadingState {
-  isLoading: boolean;
-  error: string | null;
 }
 
 // Feature types (legacy)
